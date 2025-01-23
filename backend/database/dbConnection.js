@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
-
+import dotenv from "dotenv";
+dotenv.config({ path: "./config/config.env" });
 export const dbConnection = () => {
   mongoose
     .connect(process.env.MONGO_URI, {
-      dbName: "RESERVATIONS",
+      dbName: "Restaurant Reservation",
     })
     .then(() => {
       console.log("Connected to database!");
